@@ -109,7 +109,7 @@
   position: absolute;
   top: 6rem;
   left: 25%;
-  animation: circle-1 2s ease-in-out;
+  /* animation: circle-1 2s ease-in-out; */
 }
 
 @keyframes circle-1 {
@@ -131,7 +131,7 @@
   justify-content: center;
   font-family: Arial, Helvetica, sans-serif;
   text-align: start;
-  animation: content-1 2s ease-in-out;
+  /* animation: content-1 2s ease-in-out; */
 }
 
 @keyframes content-1 {
@@ -179,7 +179,7 @@
   width: 100%;
   padding-top: 5rem;
   display: flex;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 }
 
 .section-3-data {
@@ -200,7 +200,7 @@
   justify-content: center;
   font-family: Arial, Helvetica, sans-serif;
   text-align: start;
-  animation: content-1 2s ease-in-out;
+  /* animation: content-1 2s ease-in-out; */
 }
 
 .section-3-content > h2 {
@@ -250,7 +250,7 @@
   position: absolute;
   top: 6rem;
   right: 25%;
-  animation: circle-2 2s ease-in-out;
+  /* animation: circle-2 2s ease-in-out; */
 }
 @keyframes circle-2 {
   0% {
@@ -289,6 +289,10 @@
   margin-top: 3rem;
   display: flex;
   justify-content: space-evenly;
+}
+
+.rotating {
+  display: none;
 }
 
 .size {
@@ -530,7 +534,6 @@
 
   .merch-inner {
     margin-top: 1.5rem;
-    /* overflow-x: scroll; */
   }
 
   .size {
@@ -568,70 +571,139 @@
     font-size: 1.2rem;
   }
 
-  .section-2,
-  .section-3 {
+  .section-2 {
     padding-top: 3rem;
+    display: block;
   }
 
-  .empty {
-    width: 40%;
+  .circle-div {
+    width: 100%;
+    height: auto !important;
+    display: flex;
+    justify-content: center;
   }
 
   .circle {
-    width: 10rem;
-    height: 10rem;
-    top: 6.5rem;
-    left: 13%;
+    width: 13rem;
+    height: 13rem;
+    border-radius: 50%;
+    background-color: black;
     border: 0.6rem solid white;
+    animation: none;
+    position: unset;
   }
 
-  .section-3-circle {
-    width: 10rem;
-    height: 10rem;
-    top: 6.5rem;
-    right: 13%;
-    border: 0.6rem solid white;
+  .content {
+    width: 100%;
+    padding-left: 0rem;
+    align-items: center;
+    text-align: center;
+    /* animation: content-1 2s ease-in-out; */
   }
 
-  .section-3-circle-div,
-  .circle-div {
-    height: 25rem;
+  @keyframes content-1 {
+    0% {
+      opacity: 0;
+      transform: translateY(-4rem);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0rem);
+    }
   }
 
-  .section-3-content > h2,
   .content > h2 {
-    font-size: 1rem;
+    font-size: 1.4rem;
   }
 
-  .section-3-content > h4,
   .content > h4 {
-    font-size: 0.6rem;
+    font-size: 1rem;
     margin-top: 0rem;
     margin-bottom: 1rem;
   }
 
-  .section-3-content > button,
+  .content > p {
+    width: 100%;
+    padding: 0rem 1rem;
+    font-size: 0.8rem;
+    text-align: justify;
+    line-height: 16px;
+    margin-bottom: 1rem;
+  }
+
   .content > button {
-    font-size: 0.5rem;
-    width: 100px;
-    height: 22px;
+    font-size: 0.8rem;
+    width: 150px;
+    height: 40px;
+  }
+
+  .section-3-empty,
+  .empty {
+    display: none;
+  }
+
+  .section-3 {
+    padding-top: 3rem;
+    flex-direction: column-reverse;
+  }
+
+  .section-3-data {
+    width: 100%;
   }
 
   .widt {
-    width: 10%;
-    height: inherit;
+    display: none;
   }
 
   .section-3-content {
-    width: 90%;
+    width: 100%;
+    height: auto;
+    align-items: center;
+    text-align: center;
+    /* animation: content-1 2s ease-in-out; */
   }
 
-  .section-3-content > p,
-  .content > p {
-    font-size: 0.5rem;
+  .section-3-content > h2 {
+    font-size: 1.4rem;
+  }
+
+  .section-3-content > h4 {
+    font-size: 1rem;
+    margin-top: 0rem;
     margin-bottom: 1rem;
-    line-height: 15px;
-    width: 90%;
+    font-weight: 600;
+  }
+
+  .section-3-content > p {
+    width: 100%;
+    padding: 0rem 1rem;
+    font-size: 0.8rem;
+    line-height: 16px;
+    margin-bottom: 1rem;
+  }
+
+  .section-3-content > button {
+    font-size: 0.8rem;
+    width: 150px;
+    height: 40px;
+  }
+
+  .section-3-circle-div {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    background-color: white;
+  }
+
+  .section-3-circle {
+    width: 13rem;
+    height: 13rem;
+    border-radius: 50%;
+    background-color: black;
+    border: 0.6rem solid white;
+    animation: none;
+    position: unset;
   }
 
   .merch {
@@ -639,16 +711,76 @@
   }
 
   .merch > h1 {
-    font-size: 1rem;
+    font-size: 1.4rem;
   }
 
   .merch > p {
-    font-size: 0.5rem;
+    font-size: 0.8rem;
   }
 
   .merch-inner {
-    justify-content: start;
-    overflow-x: scroll;
+    display: none;
+    /* justify-content: start;
+    overflow-x: scroll; */
+  }
+
+  .rotating {
+    padding-top: 1rem;
+    display: block;
+    position: relative;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .rotating .image {
+    position: absolute;
+    opacity: 0;
+    transform: scale(1);
+  }
+
+  .rotating .image:nth-child(1) {
+    z-index: 5;
+    animation: fade 30s linear infinite;
+  }
+  .rotating .image:nth-child(2) {
+    z-index: 4;
+    animation: fade 30s 6s linear infinite;
+  }
+  .rotating .image:nth-child(3) {
+    z-index: 3;
+    animation: fade 30s 12s linear infinite;
+  }
+  .rotating .image:nth-child(4) {
+    z-index: 2;
+    animation: fade 30s 18s linear infinite;
+  }
+  .rotating .image:nth-child(5) {
+    z-index: 1;
+    animation: fade 30s 24s linear infinite;
+  }
+
+  @keyframes fade {
+    0% {
+      opacity: 0;
+      transform: scale(1);
+    }
+    5% {
+      opacity: 1;
+    }
+    20% {
+      opacity: 1;
+      transform: scale(1.1);
+    }
+    25% {
+      opacity: 0;
+      transform: scale(1.125);
+    }
+  }
+
+  .rotating .image img {
+    width: 300px;
+    height: 200px;
   }
 
   .size {
@@ -669,5 +801,16 @@
 
   .links {
     margin-right: 15px;
+  }
+}
+
+@media only screen and (max-width: 325px) {
+  .rotating {
+    height: 130px;
+  }
+
+  .rotating .image img {
+    width: 230px;
+    height: 130px;
   }
 }
